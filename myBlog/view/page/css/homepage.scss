@@ -1,0 +1,255 @@
+        .main-left{
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            float: left;
+            overflow: visible;
+            text-overflow: ellipsis;
+            width: 890px;
+            word-break: break-all;
+            >.main-first{
+                background: #fff none repeat scroll 0 0;
+                border: 1px solid #dedede;
+                margin-bottom: -1px;
+                padding: 20px;
+                margin-bottom: 20px;
+                &:hover{
+                    border-color: dodgerblue;
+                }
+                >.main-1{
+                    background-color: #45bcf9;
+                    color: #fff;
+                    display: block;
+                    float: left;
+                    font-size: 12px;
+                    margin-right: 10px;
+                    padding: 3px 6px;
+                    &:hover{
+                        background: red;
+                    }
+                    >a{
+                        color: #fff;
+                    }
+                }
+                >.main-2{
+                    clear: right;
+                    float: left;
+                    font-size: 21px;
+                    line-height: 1.5em;
+                    >a{
+                        color: #555;
+                        &:hover{
+                            color: #0e90d2;
+                        }
+                    }
+                }
+                >.main-3{
+                    clear: both;
+                    padding: 15px 0;
+                    >.main-3-1{
+                        color: #333;
+                        font-size: 14px;
+                        line-height: 200%;
+                        overflow: hidden;
+                        overflow-wrap: break-word;
+                        word-break: break-all;
+                        >a{
+                            color: #9ab26b;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    
+                }
+                >.main-4{
+                    clear: both;
+                    color: #bcbcbc;
+                    float: none;
+                    font-size: 12px;
+                    line-height: 200%;
+                    text-align: left;
+                    >a{
+                        color: #999;
+                        &:hover{
+                            color: #9AB26B;
+                        }
+                    }
+                }
+            }
+        }
+        .main-right{
+            float: left;
+            margin-left: 20px;
+            overflow: visible;
+            text-overflow: ellipsis;
+            width: 290px;
+            word-break: break-all;
+            >.main-right-first{
+                >h3{
+                    background-color: #169fe6;
+                    border: 1px solid #169fe6;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: normal;
+                    padding: 10px 20px;
+                }
+                >.main-right-1{
+                    background: #fff none repeat scroll 0 0;
+                    border: 1px solid rgb(222, 222, 222);
+                    color: #7e8c8d;
+                    font-family: "Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+                    font-size: 15px;
+                    line-height: 1.8;
+                    padding: 13px;
+                }
+                >.main-right-2{
+                    &:hover{
+                        border-color: red;
+                    }
+                    background: #fff none repeat scroll 0 0;
+                    border: 1px solid #dedede;
+                    color: #7e8c8d;
+                    font-size: 13px;
+                    line-height: 1.8;
+                    margin-top: 0 !important;
+                    padding: 20px;
+                    >a{
+                        color: #9fa4a4;
+                        font-size: 13px;
+                        text-decoration: none;
+                        &:hover{
+                            border-bottom: 1px dotted #9fa4a4;
+                        }
+                    }
+                    >div{
+                        >a{
+                            color: #9fa4a4;
+                            font-size: 13px;
+                            text-decoration: none;
+                            &:hover{
+                                color: #9AB26B;
+                                border-bottom: 1px dotted #9fa4a4;
+                            }
+                        }
+                    }
+                }
+            }
+            >.main-right-second{
+                margin-top: 20px;
+                 >h3{
+                    background-color: #169fe6;
+                    border: 1px solid #169fe6;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: normal;
+                    padding: 10px 20px;
+                }
+                >ul{
+                    border-color: #dedede;
+                    border-image: none;
+                    border-style: none solid solid;
+                    border-width: medium 1px 1px;
+                    >li{
+                        border-bottom: 1px solid #e9e9e9;
+                        color: #777;
+                        font-size: 14px;
+                        line-height: 2;
+                        padding: 15px 10px 15px 20px;
+                        >a{
+                            color: #777;
+                            &:hover{
+                                color: red;
+                                border-bottom: 1px dotted red;
+                            }
+                        }
+                    }
+                }
+            }
+            >.main-right-three{
+                margin-top: 20px;
+                 >h3{
+                    background-color: #169fe6;
+                    border: 1px solid #169fe6;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: normal;
+                    padding: 10px 20px;
+                }
+                >ul{
+                    border-color: #dedede;
+                    border-image: none;
+                    border-style: none solid solid;
+                    border-width: medium 1px 1px;
+                    >li{
+                        border-bottom: 1px solid #e9e9e9;
+                        color: #777;
+                        font-size: 14px;
+                        padding: 15px 10px 15px 20px;
+                    }
+                }
+            }
+            >.main-right-four{
+                margin-bottom: 20px;
+                 >h3{
+                    background-color: #169fe6;
+                    border: 1px solid #169fe6;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: normal;
+                    padding: 10px 20px;
+                }
+                >div{
+                    >ul{
+                        border-color: #dedede;
+                        border-image: none;
+                        border-style: none solid solid;
+                        border-width: medium 1px 1px;
+                        >li{
+                            border-bottom: 1px solid #e9e9e9;
+                            color: #777;
+                            font-size: 14px;
+                            line-height: 2;
+                            padding: 15px 10px 15px 20px;
+                            >a{
+                                color: #777;
+                                &:hover{
+                                    color: red;
+                                    border-bottom: 1px dotted red;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+            >.main-right-five{
+                      margin-bottom: 20px;
+              >h3{
+                    background-color: #169fe6;
+                    border: 1px solid #169fe6;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: normal;
+                    padding: 10px 20px;
+              } 
+              >ul{
+                    border-color: #dedede;
+                    border-image: none;
+                    border-style: none solid solid;
+                    border-width: medium 1px 1px;
+                    >li{
+                        border-bottom: 1px solid #e9e9e9;
+                        color: #777;
+                        font-size: 14px;
+                        line-height: 2;
+                        padding: 15px 10px 15px 20px;
+                        >a{
+                            color: #777;
+                            &:hover{
+                                color: red;
+                                border-bottom: 1px dotted red;
+                            }
+                        }
+                    }
+              } 
+            }
+        }

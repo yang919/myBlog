@@ -1,0 +1,10 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; box-sizing: border-box;}
+fieldset, img ,iframe{ border:none; }
+img{display: block;}
+ul, ol ,dl{ list-style:none; } 
+body {font:normal 12px/22px "Microsoft Yahei";overflow-x:hidden;width: 100%;height: 100%;}
+a { text-decoration:none; }
+
+h2,h3,h4,h5,h6{
+	font-weight: 200;
+}

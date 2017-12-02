@@ -1,0 +1,52 @@
+.main-left {
+  float: left;
+  margin-left: 20px;
+  overflow: visible;
+  text-overflow: ellipsis;
+  width: 150px;
+  word-break: break-all; }
+  .main-left > dl {
+    width: 100%; }
+    .main-left > dl > dt {
+      background: #6b86b3 none repeat scroll 0 0;
+      border: 1px solid #666666;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      height: 25px;
+      line-height: 25px;
+      letter-spacing: 20px;
+      margin-top: 23px;
+      text-align: center;
+      text-transform: uppercase;
+      width: auto;
+      border-right: 1px solid blue; }
+    .main-left > dl > dd {
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      height: 20px;
+      min-width: 130px;
+      line-height: 20px;
+      text-align: center;
+      cursor: pointer; }
+      .main-left > dl > dd > a {
+        color: #002c99; }
+        .main-left > dl > dd > a:hover {
+          color: white; }
+      .main-left > dl > dd:hover {
+        background: red; }
+
+.main-right {
+  background: transparent none repeat scroll 0 0;
+  float: left;
+  overflow: visible;
+  text-overflow: ellipsis;
+  width: 890px;
+  word-break: break-all; }
+
+/*# sourceMappingURL=editor.css.map */

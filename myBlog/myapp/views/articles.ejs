@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel="shortcut icon" href="http://caibaojian.com/favicon.ico" />
+    <script src="/ueditor/ueditor.config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ueditor/ueditor.all.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/ueditor/zh-cn/zh-cn.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-box">
+    		<div class="header">
+					<a class="header-left " href="#"></a>
+					<div class="header-center"></div>
+					<a href="/users/adminLogout" class="logout">退出</a>
+				</div>
+    	</div>
+      <div class="content">
+        <aside>
+          <ul class="menu">
+            <li><a href="/">系统首页</a></li>
+            <li><a href="/banner">轮播图管理</a></li>
+            <li class="active"><a href="/articles">文章管理</a></li>
+          </ul>
+        </aside>
+        <section>
+          <input type="text" name="title" id="title" value="" placeholder="标题"/>
+          <input type="text" name="author" id="author" value="" placeholder="作者"/>
+          <input type="url" name="url" id="url" value="" placeholder="转载的网址"/>
+          <input type="text" name="place" id="place" value="" placeholder="转载自..." />
+          <input type="text" name="summary" id="summary" value="" placeholder="文章概述"/>
+          <script id="box" name="content" type="text/plain"></script>
+          <button id="btn">提交</button>
+        </section>
+      </div>
+      <footer>博客底部</footer>
+    </div>
+  </body>
+  <script src="/javascripts/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+      var ue = UE.getEditor('box', {
+        initialFrameWidth : 1000,//默认宽度
+        initialFrameHeight: 300//默认高度
+      });
+      
+      $("#btn").on("click",function(){
+         var html = ue.getContent();
+         console.log(html)
+//       $.ajax({
+//         type:"post",
+//         url:"/articles/addArticle",
+//         data:{
+//           title:$("#title").val(),
+//           author:$("#author").val(),
+//           url:$("#url").val(),
+//           html:html,
+//           summary:$("#summary").val(),
+//           place:$("#place").val(),
+//           date: new Date().getTime()
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#author").val("")
+//           $("#url").val("")
+//           $("#summary").val("")
+//           $("#place").val("")
+//           ue.setContent("")
+//         }
+//				})
+//       $.ajax({
+//         type:"post",
+//         url:"/articles/techArticle",
+//         data:{
+//           title:$("#title").val(),
+//           author:$("#author").val(),
+//           url:$("#url").val(),
+//           html:html,
+//           summary:$("#summary").val(),
+//           place:$("#place").val(),
+//           date: new Date().getTime()
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#author").val("")
+//           $("#url").val("")
+//           $("#summary").val("")
+//           $("#place").val("")
+//           ue.setContent("")
+//         }
+//				})
+//
+//
+//       $.ajax({
+//         type:"post",
+//         url:"/articles/addLinkArticle",
+//         data:{
+//           title:$("#title").val(),
+//           url:$("#url").val(),
+//           html:html
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#url").val("")
+//           ue.setContent("")
+//         }
+//       })
+//
+//
+//       $.ajax({
+//         type:"post",
+//         url:"/articles/newArticle",
+//         data:{
+//           title:$("#title").val(),
+//           author:$("#author").val(),
+//           url:$("#url").val(),
+//           html:html,
+//           summary:$("#summary").val(),
+//           place:$("#place").val(),
+//           date: new Date().getTime()
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#author").val("")
+//           $("#url").val("")
+//           $("#summary").val("")
+//           $("#place").val("")
+//           ue.setContent("")
+//         }
+//				})
+//       
+//       
+//        $.ajax({
+//         type:"post",
+//         url:"/articles/goodArticle",
+//         data:{
+//           title:$("#title").val(),
+//           author:$("#author").val(),
+//           url:$("#url").val(),
+//           html:html,
+//           summary:$("#summary").val(),
+//           place:$("#place").val(),
+//           date: new Date().getTime()
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#author").val("")
+//           $("#url").val("")
+//           $("#summary").val("")
+//           $("#place").val("")
+//           ue.setContent("")
+//         }
+//				})
+//        
+//        
+//         $.ajax({
+//         type:"post",
+//         url:"/articles/hotArticle",
+//         data:{
+//           title:$("#title").val(),
+//           author:$("#author").val(),
+//           url:$("#url").val(),
+//           html:html,
+//           summary:$("#summary").val(),
+//           place:$("#place").val(),
+//           date: new Date().getTime()
+//         },
+//         success:function(data){
+//           console.log(data)
+//           $("#title").val("")
+//           $("#author").val("")
+//           $("#url").val("")
+//           $("#summary").val("")
+//           $("#place").val("")
+//           ue.setContent("")
+//         }
+//				})
+
+				$.ajax({
+           type:"post",
+           url:"/articles/addPersonDiary",
+           data:{
+             title:$("#title").val(),
+              date: new Date().getTime()
+           },
+           success:function(data){
+             console.log(data)
+             $("#title").val("")
+             ue.setContent("")
+           }
+         })
+ })
+  </script>
+</html>

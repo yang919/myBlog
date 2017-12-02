@@ -1,0 +1,293 @@
+@import "common.scss";
+@import "public.scss";
+.header{
+    width:1140px;
+    margin:0 auto;
+    .header-left{
+        width:570px;
+        float:left;
+    }
+    .header-center{
+        width:570px;
+        float:right;
+    }
+}
+.regist-login{
+    width:100%;
+//  height:626px;
+    height:526px;
+     padding-top:20px;
+     margin-top:50px;
+    .regist-login-box{
+        width:998px;
+        margin:0 auto;
+        position:relative;
+        .regist{
+            .title{
+                height:38px;
+                ul{
+                    z-index:1;
+                    height:38px;
+                    overflow:hidden;
+                    li{
+                        z-index:2;
+                        position:absolute;
+                        background:white;
+                        float:left;
+                        width:240px;
+                        height:36px;
+                        border:1px solid #d3d3d3;
+                        border-bottom-color:white;
+                        font-size:12px;
+                        text-align:center;
+                        line-height:36px;
+                        a{  
+                            color:#979797; 
+                        }
+                        i{
+                            color:#cccccc;
+                        }
+                    }
+                    li:first-child{
+                        left:180px;
+                        top:-1px;
+                        border-top:3px solid #ff5c00;
+                        a{
+                            color:#ff5c00;
+                        }
+                         i{
+                            color:#ff5c00;
+                        }
+                    }
+                    li:last-child{
+                        left:430px;
+                        top:0;
+                        background:#f8f8f8;
+                    }
+                } 
+            }
+            .regist-content{
+                width:998px;
+//              height:530px;
+                height:430px;
+                background:white;
+                border:1px solid #d3d3d3;
+                .regist-content-left{
+                    width:365px;
+                    float:left;
+                    padding-top:40px;
+                    padding-left:85px;
+                    
+                    ul{
+                        margin-top:10px;
+                        li{
+                            margin-bottom:28px;
+                            position:relative;
+                            label{
+                                float:left;
+                                width:72px;
+                                height:35px;
+                                line-height:35px;
+                                text-align:right;
+                                color:#666666;
+                                font-size:12px;
+                                margin-right:5px;
+                                
+                            }
+                            .level{
+                                display:none;
+                                position:absolute;
+                                left:77px;
+                                top:37px;
+                                height:20px;
+                                li{
+                                    float:left;
+                                    width:60px;
+                                    height:20px;
+                                    line-height:20px;
+                                    color:white;
+                                    font-size:12px;
+                                    text-align:center;
+                                    margin-right:1px;
+                                }
+                                li:first-child{
+                                    background:#ffc353;
+                                }
+                                li:nth-child(2){
+                                     background:#b1b1b1;
+                                }
+                                 li:last-child{
+                                    background:#b1b1b1;
+                                }
+                            }
+                            
+                            .message{
+                                display:none;
+                                position:absolute;
+                                left:77px;
+                                top:37px;
+                                width:184px;
+                                height:20px;
+                                line-height:20px;
+                                background:#ffedb5;
+                                border:1px solid #ff9900;
+                                border-radius:2px;
+                                img{
+                                    float:left;
+                                    margin: 2px;
+                                }
+                                span{
+                                    color:#ff0000;
+                                    font-size:12px;
+                                }
+                                .span{
+                                    color:#0e931c;
+                                }
+                            }
+                            .mess{
+                                background:white;
+                                border:0; 
+                            }
+                            input{
+                                outline:none;
+                            }
+                             ::-webkit-input-placeholder{
+                                color:#a9a9a9;
+                            }
+                            i{
+                                float:right;
+                                color:#cccccc;
+                                position:absolute;
+                                left:325px;
+                                top:10px;
+                            }
+                            .ipt{
+                                
+                                padding-left:5px;
+                                width:265px;
+                                height:33px;
+                                border:1px solid #c1c1c1;
+                                outline:none;
+                            }
+                            .anniu{
+                                 padding-left:45px;
+                                float:left;
+                                width:228px;
+                                height:42px;
+                                color:#666;
+                                font-size:12px;
+                                line-height:42px;
+                                background:#fcfcfc url(../images/12.png) no-repeat -330px 6px;
+                                border:1px solid #cccccc;
+                            }
+                            #txt{
+                                width:124px;
+                                height:33px;
+                                border:1px solid #c1c1c1;
+                                margin-right:10px;
+                            }
+                           #getCode{
+                                width:109px;
+                                height:28px;
+                                background:url(../images/11.png);
+                                color:#ff7800;
+                                line-height:28px;
+                                text-align:center;
+                                border:1px solid #ffda71;
+                                border-radius:4px;
+                            }
+                            .sp{
+                                color:#666;
+                                font-size:12px;
+                                height:12px;
+                                line-height:12px;
+                                vertical-align:middle;
+                                span{
+                                    color:#333;
+                                }
+                            }
+                            .sub{
+                                width:227px;
+                                height:38px;
+                                display:block;
+                                background:#ff5c00;
+                                color:white;
+                                line-height:38px;
+                                text-align:center;
+                                margin:30px auto 0;
+                                outline:none;
+                            }
+                        } 
+                        .test{
+                            overflow:hidden;
+                        }
+                        .check{
+                            height:36px;
+                            line-height:36px;
+                            width:232px;
+                            margin:0 auto;
+                            #check{
+                                margin:2px 9px 0 5px;
+                                vertical-align:middle;
+                            }
+                        }
+                        .subm{
+                            margin-bottom:20px;
+                        }
+                    }
+                    .other{
+                         width:227px;
+                         margin:0 auto;
+                        height:28px;
+                        color:#4d4d4d;
+                        font-size:12px;
+                        line-height:28px;
+                    }
+                    .account{
+                        width:227px;
+                        margin:0 auto;
+                        li{
+                            float:left;
+                            a{
+                                margin-right:10px;
+                                display:block;
+                                width:24px;
+                                height:24px;
+                            }
+                            .one{
+                                background:url(../images/13.png) no-repeat -1px -301px;
+                            }
+                             .two{
+                                background:url(../images/13.png) no-repeat -28px -301px;
+                            }
+                             .three{
+                                background:url(../images/13.png) no-repeat -84px -301px;
+                            }
+                        }
+                    }
+                }
+                .regist-content-right{
+                    float:left;
+                    margin:40px 0 0 30px;
+                    width:518px;
+                    a{
+                        display:block;
+                        margin:0 auto;
+                        width:380px;
+                        height:340px;
+                        border-radius: 10px;
+                        img{
+                             width:380px;
+                            height:340px;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+   		<link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css">
+		<link rel="stylesheet" href="css/regist.css" />
+		<link rel="shortcut icon" href="http://caibaojian.com/favicon.ico" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<a class="header-left " href="index.html"></a>
+				<div class="header-center "></div>
+			</div>
+		</div>
+		<div class="regist-login">
+			<div class="regist-login-box">
+				<div class="regist">
+					<div class="title">
+						<ul>
+							<li><a href="regist.html"><i class="iconfont icon-yonghu1"></i>注册</a></li>
+							<li><a href="login.html"><i class="iconfont icon-denglu2"></i>登录</a></li>
+
+						</ul>
+					</div>
+					<div class="regist-content">
+						<div class="regist-content-left">
+							<form>
+								<ul>
+									<li>
+										<label for="">手机号：</label>
+										<input type="text" placeholder="请输入手机号" id="uname" name="uname" class="ipt"/>
+										<i class="iconfont icon-dianhua"></i>
+										<p class="message"><img src="images/1.gif" alt="" /><span>手机格式不对，请重新输入！</span></p>
+									</li>
+									<li>
+										<label for="">请设置密码：</label>
+										<input type="password" placeholder="请输入密码"class="ipt" id="upwd" name="upwd" />
+										<i class="iconfont icon-bi-copy"></i>
+										<p class="message"><img src="images/1.gif" alt="" /><span>密码长度限制为6-20位字符</span></p>
+										<ul class="level">
+											<li id="weak">弱</li>
+											<li id="middle">中</li>
+											<li id="better">强</li>
+										</ul>
+									</li>
+									<li>
+										<label for="">请确认密码：</label>
+										<input type="password" placeholder="请再次填写密码" class="ipt" id="qpwd" />
+										<i class="iconfont icon-bi-copy"></i>
+										<p class="message"><img src="images/1.gif" alt="" /><span>2次密码不一致，请重新输入</span></p>
+									</li>
+									<!--<li class="test"><label for="">点击验证：</label><a href="#" class="anniu">点击按钮进行验证</a></li>-->
+									<li><label for="">短信验证码：</label><input type="text"  id="txt"/><input type="button"  id="getCode" value="获取手机验证码" /></li>
+									<li class="subm">
+										<input type="button" class="sub" id="btn1" style="outline:none;border:none;" value="提交注册"/>
+									</li>
+								</ul> 
+							</form>
+						</div>
+						<div class="regist-content-right">
+							<a href="#" title="新人注册APP三重礼"><img src="images/timg.jpg"/></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<footer>
+			<div id="copright">
+				<span>本站采用创作共用版权 CC BY-NC-ND/2.5/CN  许可协议</span>
+				<span>滇ICP备14002061号-1</span>
+			</div>
+		</footer>
+	</body>
+</html>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/myCookie.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/regist.js"></script>
+	<script type="text/javascript">
+	$("#getCode").on("click",function(){
+	  $(this).attr("disabled","disabled");
+	  $.ajax({
+	      type:"get",
+	      url:'http://localhost:3000/sendMsg',
+	      data:{
+	        mobile:$("#uname").val()
+	      },
+	      success:function(data){
+	        if(data ==1){
+	         console.log("短信发送成功，可以开始倒计时")
+//	         console.log(data);
+//	         var _json={
+//	         	"number":data
+//	         }
+//	         setCookie("info",JSON.stringify(_json));
+	          var count = 60;
+	          var timer = setInterval(function(){
+	           $("#getCode").val(count + "s后重新发送")
+	           count--;
+	           if(count == 0){
+	             clearInterval(timer)
+	             $("#getCode").val("获取手机验证码")
+	             $("#getCode").removeAttr("disabled");
+	           }
+	         },1000)
+	        }else{
+	          console.log("短信发送失败")
+	           $("#getCode").removeAttr("disabled");
+	        }
+	      }
+	    });
+	})
+    $("#btn1").on("click", function(){
+      $.ajax({
+        type:"post",
+        url:"http://localhost:3000/users/userRegist",
+        data:$("form").serialize(),
+        success:function(data){
+          console.log(data)
+          if(data == "0"){
+            alert("该用户已注册，请直接登录")
+          }else if(data == "1"){
+//        	if($("#txt").val == getCookie("info").number){
+          		window.location.href = "login.html";
+//        	}
+          }else if(data == "2"){
+            alert("注册失败")
+          }
+        }
+      });
+    })
+    
+  </script>

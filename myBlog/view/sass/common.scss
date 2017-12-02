@@ -1,0 +1,22 @@
+html,body,div,p,ul,ol,li,dl,dt,dd,table,tr,td,th,caption,form,hr,h1,h2,h3,h4,h5,h6,input,img{
+    margin:0;
+    padding:0;
+}
+body{
+    font-family: "微软雅黑",Arial;
+    background:#f5e5c1;
+}
+a{
+    text-decoration: none;
+    cursor:pointer;
+}
+ul,li{
+    list-style: none;
+}
+img{
+    border:none;
+}
+::selection {
+    background: #63B6F7;
+    color: #fff;
+}

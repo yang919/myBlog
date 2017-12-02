@@ -1,0 +1,61 @@
+@import "common.scss";
+@import "public.scss";
+.main-content{
+    width:1140px;
+    margin:0 auto;
+    background: #F1F0EE;
+    .main-content-bottom{
+        padding: 20px 100px 100px;
+        background-color: #fff;
+        .person-top{
+            overflow: hidden;
+            img{
+               width: 350px; 
+               height:400px;
+               float: left;
+               border: none;
+            }
+            .person-text{
+                width: 500px;
+                margin: 10px 0 0 20px;
+                float: left;
+                .list{
+                    li{
+                        margin-bottom: 20px;
+                        .title{
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #73706d;
+                            margin-bottom: 10px;
+                        }
+                        .text{
+                            font-size: 15px;
+                            color: #666;
+                            line-height: 25px;
+                            margin-bottom: 8px;
+                            text-indent: 22px;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .person-bottom{
+            position: relative;
+            padding: 20px 0 50px;
+            .text{
+                font-size: 15px;
+                color: #666;
+                line-height: 25px;
+                text-indent: 25px;
+            }
+            img{
+                position: absolute;
+                bottom: -70px;
+                right: 30px;
+                width:200px;
+                height:100px;
+            }
+        }
+    }
+}

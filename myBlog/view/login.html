@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+  		<link rel="stylesheet" type="text/css" href="css/iconfont/iconfont.css">
+		<link rel="stylesheet" href="css/login.css" />
+		<link rel="shortcut icon" href="http://caibaojian.com/favicon.ico" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<a class="header-left" href="index.html"></a>
+				<div class="header-center"></div>
+			</div>
+		</div>
+		<div class="regist-login">
+				<div class="regist-login-box">
+					<div class="login">
+						<div class="title">
+							<ul>
+								<li><a href="regist.html"><i class="iconfont icon-yonghu1"></i>注册</a></li>
+								<li><a href="login.html"><i class="iconfont icon-denglu2"></i>登录</a></li>
+							</ul>
+						</div>
+						<div class="login-content">
+							<div class="login-content-left">
+								<a href="#" title="下载注册"><img src="images/timg.jpg"/></a>
+							</div>
+							<div class="login-content-right">
+								<form >
+									<ul>
+										<li>
+											<label for="">用户名：</label>
+											<input type="text" placeholder="请填入手机号码" class="ipt" id="uname" name="uname"/>
+											<i class="iconfont icon-dianhua"></i>
+											<p class="message"><img src="images/1.gif" alt="" /><span>用户名不正确！</span></p>
+										</li>
+										<li>
+											<label for="">密码：</label>
+											<input type="password" placeholder="请填入密码"class="ipt" id="upwd" name="upwd"/>
+											<i class="iconfont icon-bi-copy"></i>
+											<p class="message"><img src="images/1.gif" alt="" /><span>密码长度为6-20位字符</span></p>
+										</li>
+										<li class="subm">
+											<input type="button" class="sub" id="btn1" style="outline:none;border:none;" value="立即登录"/>
+										</li>
+									</ul>  
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="copright">
+				<span>本站采用创作共用版权 CC BY-NC-ND/2.5/CN  许可协议</span>
+				<span>滇ICP备14002061号-1</span>
+			</div>
+		</footer>
+	</body>
+</html>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/myCookie.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/login.js"></script>
+	  <script type="text/javascript">
+    $("#btn1").on("click", function(){
+      $.ajax({
+        type:"get",
+        url:"http://localhost:3000/users/userLogin",
+        data:$("form").serialize(),
+        success:function(data){
+          console.log(data)
+			if(data == "0"){
+				$("#uname").css({"border":"1px solid #e60000"})
+				$("#uname").parent().find(".message").css({"display":"block"});
+				$("#uname").parent().find("p").removeClass("mess");
+				$("#uname").parent().find(".message").find("img").attr({"src":"images/1.gif"});
+				$("#uname").parent().find(".message").find("span").html("用户名不正确！");
+			}else if(data == "1"){
+				$("#uname").css({"border":"1px solid #59a358"})
+				$("#uname").parent().find(".message").css({"display":"block"});
+				$("#uname").parent().find("p").addClass("mess");
+				$("#uname").parent().find(".message").find("img").attr({"src":"images/2.gif"});
+				$("#uname").parent().find(".message").find("span").html("");
+				$("#upwd").css({"border":"1px solid #59a358"})
+				$("#upwd").parent().find(".message").css({"display":"block"});
+				$("#upwd").parent().find("p").addClass("mess");
+				$("#upwd").parent().find(".message").find("img").attr({"src":"images/2.gif"});
+				$("#upwd").parent().find(".message").find("span").html("");
+				 location.href="index.html";
+				 var arr = [];
+				var _json ={
+					"uname":$("#uname").val(),
+					"upwd":$("#upwd").val() 
+				}
+				arr.push(_json);
+				setCookie("userInfo",JSON.stringify(arr));
+			}
+			if(data == "2"){
+				$("#upwd").css({"border":"1px solid #e60000"})
+				$("#upwd").parent().find(".message").css({"display":"block"});
+				$("#upwd").parent().find("p").removeClass("mess");
+				$("#upwd").parent().find(".message").find("img").attr({"src":"images/1.gif"});
+				$("#upwd").parent().find(".message").find("span").html("密码不正确");
+			}else if(data == "-1"){
+			  alert("登录失败");
+			}
+		}
+      })
+    })
+  </script>

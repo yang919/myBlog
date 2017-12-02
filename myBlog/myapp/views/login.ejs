@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+    <link rel="shortcut icon" href="http://caibaojian.com/favicon.ico" />
+    <style>
+    	.container .content form {
+			  flex: 1;
+			  height: 100%;
+			  overflow: auto;
+			}
+    	.container .content form ul{
+    		width:400px;
+    		height:300px;
+    		padding:50px 30px;
+    		margin:100px auto;
+    		box-shadow: 2px 2px 20px #666,-2px -2px 20px #666666;
+    		}
+    		.container .content form ul li{
+    			width:300px;
+    			margin:0 auto;
+    			height:35px;
+    			line-height:35px;
+    			margin-bottom:28px;
+    		}
+    			.container .content form ul li label{
+    				float:left;
+            width:72px;
+            height:35px;
+            line-height:35px;
+            text-align:right;
+            color:#666666;
+            font-size:12px;
+            margin-right:5px;
+    			}
+    				.container .content form ul li input{
+    					padding-left:5px;
+	            width:200px;
+	            height:35px;
+	            border:1px solid #c1c1c1;
+	            outline:none;
+	            float:left;
+    				}
+    				#btn{
+    					margin-left:50px;
+    					background: #F16E50;
+    					color:white;
+    					margin-top:40px;
+    				}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+     <div class="header-box">
+    		<div class="header">
+					<a class="header-left " href="#"></a>
+					<div class="header-center"></div>
+				</div>
+    	</div>
+      <div class="content">
+        <form >
+        	<ul>
+						<li>
+							<label for="">用户名：</label>
+							<input type="text" placeholder="请输入用户名" id="username" name="username" class="ipt"/>
+						</li>
+						<li>
+							<label for="">密码：</label>
+							<input type="password" placeholder="请输入密码"class="ipt" id="pwd" name="pwd" />
+						</li>
+						<li class="subm">
+							<input type="button" class="sub" id="btn" style="outline:none;border:none;" value="登录"/>
+						</li>
+					</ul> 
+        </form>
+      </div>
+      <footer>博客底部</footer>
+    </div>
+  </body>
+  <script src="/javascripts/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  	$("#btn").on("click", ()=>{
+  	  $.ajax({
+  	  	type:"post",
+  	  	url:"/users/adminLogin",
+  	  	data:$("form").serialize(),
+  	  	success:function(data){
+  	  	  console.log(data)
+  	  	  if(data == "1"){
+  	  	    window.location.reload()
+  	  	  }
+  	  	}
+  	  });
+  	})
+  </script>
+</html>

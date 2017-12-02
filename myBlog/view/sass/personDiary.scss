@@ -1,0 +1,120 @@
+@import "common.scss";
+@import "public.scss";
+.main-content{
+    width:1140px;
+    margin:0 auto;
+    background: #F1F0EE;
+//  .main-content-box{
+//      width:1140px;
+//      margin:0 auto;
+//  }
+    .main-content-bottom{
+        .list{
+            display: block;
+            list-style-type: disc;
+            .list-li{
+                height: 130px;
+                position: relative;
+                transition: all 1s;
+                animation-name: bounceIn;
+                 animation-duration: 1s;
+                animation-fill-mode: both;
+                zoom: 1;
+                list-style: none;
+//              padding:0 20px;
+                .pic-box{
+                    height: 120px;
+                    position: relative;
+                    top: 10px;
+                    width: 100px;
+                    opacity: .9;
+                    margin-left: 35px;
+                    float: left;
+//                  background:url()
+                    img{
+                        border-radius: 50px;
+                        width: 100px;
+                        height: 100px;
+                        border:none;
+                    }
+                }
+                .text-box{
+                    width: 910px;
+                    height: 100px;
+                    background: #f8f8f8;
+                    display: block;
+                    border-radius: 5px;
+                    border: 1px solid #e2dfdf;
+                    font-size: 14px;
+                    margin: 10px 40px 0 0;
+                    color: #10200a;
+                    float:right;
+                    .info{
+                        width: 810px;
+                        height: 70px;
+                        padding: 10px 30px;
+                        font-size: 14px;
+                        color: #10200a;
+                        .date-time{
+                            display: block;
+                            width: 85px;
+                            height: 25px;
+                            line-height: 25px;
+                            background: #ee5a5a;
+                            border-radius: 3px;
+                            text-align: center;
+                            color: #fff;
+                            position: absolute;
+                            right: 65px;
+                            bottom: 32px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+            li:before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 20px 22px;
+                border-color: transparent transparent transparent #fff;
+                position: absolute;
+                left: 136px;
+                top: 42px;
+            }
+            li:after{
+                content: "";
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                position: absolute;
+                left: 168px;
+                top: 38px;
+                background: #ccccce;
+                border: 2px solid #fff;
+                transition: all .5s;
+                display: block;
+                 clear: both;
+            }
+        }
+    }
+}
+@keyframes bounceIn{
+    0% {
+        opacity: 0;
+        transform: scale(.3);
+    }
+    
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(.9);
+    }
+    
+    100% {
+        transform: scale(1);
+    }
+}
